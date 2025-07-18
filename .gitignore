@@ -1,0 +1,35 @@
+*.pdf
+# --- Archivos de compilación ---
+*.o
+*.obj
+*.a
+*.so
+*.out
+*.exe
+*.gch
+*.d
+
+# --- Archivos generados por el ejecutable ---
+cub3d
+*.log
+*.trace
+
+# --- Archivos de respaldo y temporales ---
+*~
+*.swp
+*.tmp
+*.bak
+*.old
+
+# --- Archivos creados por editores/IDE ---
+.vscode/
+.idea/
+*.code-workspace
+*.DS_Store
+
+# --- Directorios comunes ---
+obj/
+bin/
+build/
+__pycache__/
+
