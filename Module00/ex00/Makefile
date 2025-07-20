@@ -11,9 +11,7 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-MSG_COMPILE = @echo "$(GREEN)🔧 Compilando $(NAME)...$(RESET)"
-
-
+MSG_COMPILE = @echo "$(WHITE)\n🔧 Module00 - CPP. Ex00..." "$(GREEN)COMPILED\n$(RESET)" ""
 
 
 NAME = megaphone
@@ -32,11 +30,11 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 	@echo "$(YELLOW)🧼 Limpieza de objetos realizada.$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 	@echo "$(RED)🗑️  Eliminado binario final.$(RESET)"
 
 re: fclean all
