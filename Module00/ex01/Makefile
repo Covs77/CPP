@@ -10,7 +10,7 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-MSG_COMPILE = @echo "$(GREEN)🔧 Compilando $(NAME)...$(RESET)"
+MSG_COMPILE = @echo "\n$(WHITE)🔧 $(NAME) successfully compiled...\n$(RESET)"
 
 NAME = phonebook
 CXX = c++
@@ -23,18 +23,18 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MSG_COMPILE)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(INCLUDES)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)
-	@echo "$(YELLOW)🧼 Limpieza de objetos realizada.$(RESET)"
+	@echo "\n$(YELLOW)🧼 Cleaning up objects...$(RESET)"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "$(RED)🗑️  Eliminado binario final.$(RESET)"
+	@echo "\n$(RED)🗑️  Deleted final binary...$(RESET)"
 
 re: fclean all
 
