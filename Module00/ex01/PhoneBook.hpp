@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 10:45:46 by cleguina          #+#    #+#             */
-/*   Updated: 2025/07/22 20:01:38 by cova             ###   ########.fr       */
+/*   Updated: 2025/07/22 20:17:39 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ class PhoneBook
 		void displayContactList();
 		void displayContact(int index);
 		bool onlynumbers(const std::string& str);
+		void printError(const std:: string msg);
 	
 	public:
 		PhoneBook(void);
 		void add(void);
 		void search(void);
-		void printError(const std:: string msg);
 };
 
 #endif

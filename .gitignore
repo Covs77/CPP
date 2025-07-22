@@ -10,8 +10,6 @@
 *.d
 
 # --- Archivos generados por el ejecutable ---
-cub3d
-*.log
 *.trace
 
 # --- Archivos de respaldo y temporales ---
