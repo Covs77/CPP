@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 16:40:27 by cleguina          #+#    #+#             */
-/*   Updated: 2025/07/22 10:27:25 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:43:36 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 #include <string>
-
+#include <iostream>
 class Contact
 {
 	private:
