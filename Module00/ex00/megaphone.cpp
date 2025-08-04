@@ -2,6 +2,7 @@
 #include <cctype>
 #include <string>
 #include <cstring>
+#include <cstdio>
 
 
 int main(int argc, char **argv)
