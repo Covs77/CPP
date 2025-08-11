@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 14:39:36 by cova              #+#    #+#             */
-/*   Updated: 2025/08/06 11:41:44 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/06 19:21:47 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int main (int argc, char** argv)
     if (argc != 4)
         return printError ("Invalid arguments. Please usage:<filename>, <s1>, <s2>" );
     
-    std::ifstream file(argv[1]); 
+    std::ifstream file(argv[1]); // Open the file
     std::string s1 = argv[2];
     std::string s2 = argv[3];
     if(s1.empty() || s2.empty())

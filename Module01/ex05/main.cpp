@@ -5,19 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 11:57:12 by cova              #+#    #+#             */
-/*   Updated: 2025/08/05 13:19:27 by cova             ###   ########.fr       */
+/*   Created: 2025/08/10 19:32:52 by cova              #+#    #+#             */
+/*   Updated: 2025/08/11 14:03:52 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int main ()
+int main(int argc, char **argv)
 {
-    int const N = 20;
-    Zombie *zombies = zombieHorde(N, "ZombieHorde");
-    for (int i = 0; i < N; i++)
-        zombies[i].announce();
-    delete[] zombies;
-    return 0;
+
+	if (argc != 2)
+	{
+		std::cout << RED << "Usage: " << argv[0] << " [LEVEL]" << std::endl;
+		return (1);
+	}
+	std::string level = argv[1];
+	Harl *harl = new Harl();
+	harl->complain(level);
+	delete(harl);
+	return (0);
 }

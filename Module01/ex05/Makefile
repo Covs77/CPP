@@ -12,11 +12,12 @@ RESET	:= \033[0m
 
 MSG_COMPILE = @echo "$(MAGENTA)🔧 $(NAME) successfully compiled...$(RESET)"
 
-NAME = ZombieHorde
+NAME = harl
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp 
-INCLUDES = Zombie.hpp
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp Harl.cpp
+INCLUDES = Harl.hpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
