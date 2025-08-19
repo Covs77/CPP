@@ -15,8 +15,8 @@ MSG_COMPILE = @echo "$(MAGENTA)🔧 $(NAME) successfully compiled...$(RESET)"
 NAME = myFirstOCF
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp *.cpp
-INCLUDES = *.hpp
+SRCS = main.cpp Fixed.cpp
+INCLUDES = Fixed.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 
