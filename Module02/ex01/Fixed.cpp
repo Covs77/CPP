@@ -6,12 +6,11 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 12:14:23 by cova              #+#    #+#             */
-/*   Updated: 2025/08/20 12:08:26 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/20 12:07:28 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Fixed.hpp"
-
 
 /****** Constructor *******/
 Fixed::Fixed(void)
@@ -24,7 +23,7 @@ Fixed::Fixed(void)
 Fixed::Fixed(const Fixed &src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    _val = src.getRawBits();
+    _val = src._val;
 }
 
 /******* Assignation Operator ******/
@@ -45,13 +44,43 @@ Fixed::~Fixed()
 }
 
 
+Fixed::Fixed( const int intNbr)
+{
+    std::cout << "Int constructor called" << std::endl;    
+    _val = intNbr << _bits;
+}
+
+Fixed::Fixed( const float floatNbr)
+{
+    std::cout << "Float constructor called" << std::endl;
+    _val = static_cast<float>(roundf(floatNbr * (1 << _bits)));
+}
+
+
+
 int     Fixed::getRawBits( void ) const
  {
-    std::cout << "getRawBits member function called" << std::endl;
     return this->_val; 
  }
 
 void    Fixed::setRawBits( int const raw )
 {
     this->_val = raw;    
+}
+
+float   Fixed::toFloat( void ) const
+{
+    return ((float)this->_val / (1 << _bits));    
+}
+
+
+int     Fixed::toInt( void ) const
+{
+    return (this->_val >> _bits);
+}
+
+std::ostream &operator << ( std::ostream &os, Fixed const &newNum)
+{
+	os << newNum.toFloat();
+	return os;
 }
