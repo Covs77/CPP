@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 13:37:28 by cova              #+#    #+#             */
-/*   Updated: 2025/08/20 19:50:37 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/25 11:50:20 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ Point &Point::operator=(const Point &copy)
 }
 
 
-Point::Point(const Point &copy)
+Point::Point(const Point &copy): _x(copy.getX()), _y(copy.getY())
 {
    //std::cout << "Point copy constructor called" << std::endl;
-    (Fixed) this->_x = copy.getX();
-    (Fixed) this->_y = copy.getY();
+    //(Fixed) this->_x = copy.getX();
+    //(Fixed) this->_y = copy.getY();
 }
 
 
