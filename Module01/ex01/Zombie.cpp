@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 11:57:25 by cova              #+#    #+#             */
-/*   Updated: 2025/08/05 12:42:54 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/26 12:20:48 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ void Zombie::setName(std::string name)
 void Zombie::announce(void)
 { std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl; }
 
-Zombie* zombieHorde( int N, std::string name );

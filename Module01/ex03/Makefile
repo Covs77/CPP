@@ -14,9 +14,9 @@ MSG_COMPILE = @echo "$(MAGENTA)🔧 $(NAME) successfully compiled...$(RESET)"
 
 NAME = weapon
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
-INCLUDES = Weapon.hpp, HumanA.hpp, HumanB.hpp
+INCLUDES = Weapon.hpp HumanA.hpp HumanB.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

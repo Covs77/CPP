@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 11:58:10 by cova              #+#    #+#             */
-/*   Updated: 2025/08/05 12:41:24 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/26 12:19:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <cstdio>
+#include <string>
+#include <sstream>
+
 
 class Zombie
 {

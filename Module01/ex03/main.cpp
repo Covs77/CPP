@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 13:48:42 by cova              #+#    #+#             */
-/*   Updated: 2025/08/05 14:30:33 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/26 12:51:14 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ int main()
 		
 		HumanA	bob("Bob", club);
 		bob.attack();
-		club.setType("some other type of club");
+		club.setType("Knife");
 		bob.attack();
 	}
 	{
-		Weapon	club = Weapon("123");
+		Weapon	club = Weapon("hammer");
 
 		HumanB	jim("jim");
 		jim.setWeapon(club);
 		jim.attack();
-		club.setType("some other type of club");
+		club.setType("");
 		jim.attack();
 	}
 	return 0;
