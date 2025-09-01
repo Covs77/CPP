@@ -6,18 +6,38 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:04:27 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 13:53:51 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/01 17:01:27 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 
 int main()
 {
-	const Animal* animal = new Animal();
+
+
+const Animal* meta = new Animal();
+const Animal* j = new Dog();
+const Animal* i = new Cat();
+const WrongAnimal* k = new WrongCat();
+std::cout << j->getType() << " " << std::endl;
+std::cout << i->getType() << " " << std::endl;
+std::cout << k->getType() << " " << std::endl;
+i->makeSound(); //will output the cat sound!
+j->makeSound();
+k->makeSound();
+meta->makeSound();
+delete meta;
+delete i;
+delete j;
+delete k;
+
+	/* const Animal* animal = new Animal();
 	std::cout << "Type of animal: " << animal->getType() << std::endl;
 	animal->makeSound();
 	std::cout << std::endl;
@@ -30,7 +50,7 @@ int main()
 	const Animal* persa = new Cat();
 	std::cout << "Type of animal: "  << persa->getType() << " " << std::endl;
 	persa->makeSound();
-	std::cout << std::endl;
+	std::cout << std::endl; */
 
 	/* const WrongAnimal* wrongAnimal = new WrongAnimal();
 	std::cout << wrongAnimal->getType() << " " << std::endl;
@@ -42,12 +62,12 @@ int main()
 	wrongSalchicha->makeSound();
 	std::cout << std::endl;*/
 
-	delete animal; 
+/*	delete animal; 
 	std::cout << std::endl;
 	delete salchicha; 
 	std::cout << std::endl;
 	delete persa;
-	std::cout << std::endl;
+	std::cout << std::endl; */
 	/* delete wrongAnimal;
 	std::cout << std::endl;
 	delete wrongSalchicha;

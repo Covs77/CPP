@@ -17,7 +17,7 @@ MSG_COMPILE = @echo "$(GREEN)🔧 $(NAME) compliled...\n$(RESET)" ""
 NAME = animal
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iincludes
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp #WrongCat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp 
 
 SRCS	= $(addprefix src/, $(SRC))
 OBJS	= $(addprefix obj/, $(SRC:.cpp=.o))
