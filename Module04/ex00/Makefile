@@ -11,13 +11,13 @@ CYAN	:= \033[36;1m
 WHITE	:= \033[37;1m
 RESET	:= \033[0m
 
-MSG_COMPILE = @echo "$(WHITE)\n🔧 Module00 - CPP. Ex00..." "$(GREEN)COMPILED\n$(RESET)" ""
+MSG_COMPILE = @echo "$(GREEN)🔧 $(NAME) compliled...\n$(RESET)" ""
 
 
 NAME = animal
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iincludes
-SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp #WrongCat.cpp
 
 SRCS	= $(addprefix src/, $(SRC))
 OBJS	= $(addprefix obj/, $(SRC:.cpp=.o))
