@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 13:03:31 by cova              #+#    #+#             */
-/*   Updated: 2025/08/28 13:27:20 by cova             ###   ########.fr       */
+/*   Updated: 2025/08/28 17:46:23 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef DIAMONDTRAP_HPP
-#define DAIMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:04:27 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 18:22:16 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/02 11:16:47 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int main()
 {
 	std::cout << "intento crear un objeto animal\n";
-	//Animal a;
+	Animal a;
 	std::cout << "------------------------------\n";
 	//Animal* animal = new Animal();
 	Animal* dog = new Dog();

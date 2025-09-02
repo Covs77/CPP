@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:04:27 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 18:16:36 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/02 11:15:44 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main()
 	if (originalCat->getBrain()->getIdeas(0) != NULL)
 		std::cout << "Idea del gato original: " << *originalCat->getBrain()->getIdeas(0) << std::endl;
 	if (copiedCat->getBrain()->getIdeas(0) != NULL)
-		std::cout << "Copied Cat idea: " << *copiedCat->getBrain()->getIdeas(0) << std::endl;
+		std::cout << "Idea del gato copiado: " << *copiedCat->getBrain()->getIdeas(0) << std::endl;
 	std::cout << std::endl;
 	
 	delete originalCat;
