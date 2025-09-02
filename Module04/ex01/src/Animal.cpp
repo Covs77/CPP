@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:05:06 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 13:30:38 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/02 20:02:44 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,4 @@ void Animal::setType(std::string const type)
 void Animal::makeSound() const
 {
     std::cout << "A generic animal type makes an undefined sound\n";
-}
+} 

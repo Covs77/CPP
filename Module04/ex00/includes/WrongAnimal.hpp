@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 16:41:48 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 17:01:17 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/02 19:16:10 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class WrongAnimal
         WrongAnimal &operator=(const WrongAnimal &other);
         std::string getType() const; 
         void makeSound() const;
-    
-
 };
 
 #endif

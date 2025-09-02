@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:10:11 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 17:46:37 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/02 20:03:32 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class Dog  : public Animal
     public:
     
         Dog();
-        virtual ~Dog();
+        ~Dog();
         Dog(const Dog &other);
         Dog &operator=(const Dog &other);
-        virtual void makeSound() const;
+        void makeSound() const;
         Brain *getBrain();
 };
 
