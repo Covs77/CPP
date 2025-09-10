@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:45:16 by cova              #+#    #+#             */
-/*   Updated: 2025/09/05 13:50:31 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/10 10:03:54 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ Form::Form(const std::string &name, int grade, int exec):_name(name), _signed(fa
 {
     std::cout << "Form param creator...\n" <<  _name << ", with grade to sign: " << _gradeToSign << ", and grade to exec: " << _gradeToExec << std::endl;
     if (_gradeToSign < 1 || _gradeToExec < 1)
+    {
         throw Form::GradeTooHighException();
+    }
     else if (_gradeToSign >150 || _gradeToExec > 150)
         throw Form::GradeTooHighException();
 };
@@ -86,10 +88,10 @@ std::ostream& operator << (std::ostream &os, const Form &f)
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-    return ("Error: Grade is too high");
+    return ("Grade is too high");
 };
 
 const char *Form::GradeTooLowException::what() const throw()
 {
-    return ("Error: Grade is too Low");
+    return ("Grade is too Low");
 };

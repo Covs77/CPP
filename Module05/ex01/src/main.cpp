@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:40:30 by cova              #+#    #+#             */
-/*   Updated: 2025/09/05 13:47:41 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/10 10:01:52 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,15 @@ int main()
         std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
     }
 
-    std::cout << "\n🔒 === Test 6: Failed form signing (grade too low) === ❌" << std::endl;
+    std::cout << "\033[32;1m" << "\n=== Test 6: Failed form signing (grade too low) ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat charlie("Charlie", 100);
         Form form5("Top Secret", 10, 5);
         
-        std::cout << "📋 Before attempt: " << form5 << std::endl;
+        std::cout << "\033[34;1m" << "Before signing: " << form5 << "\033[0m" << std::endl;
         charlie.signForm(form5);
-        std::cout << "📋 After attempt: " << form5 << std::endl;
+        std::cout << "\033[34;1m" << "After signing: " << form5 << "\033[0m" << std::endl;
     }
     catch (std::exception &e)
     {
