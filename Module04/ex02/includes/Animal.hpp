@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 14:00:06 by cova              #+#    #+#             */
-/*   Updated: 2025/09/02 20:19:34 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/03 13:42:39 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ class Animal
        std::string _type;
 
     public:
-    /* constructor, constr copia, destructor, operador=, gettype, setType, makesound*/
         Animal();
         Animal(const Animal &other);
         virtual ~Animal();
         Animal &operator=(const Animal &other);
         std::string getType() const;
         void setType(std::string const type);
-        virtual void makeSound() const = 0;
+        virtual void makeSound() const = 0; // virtual puro
 };
 #endif

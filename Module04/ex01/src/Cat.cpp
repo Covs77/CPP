@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:34:25 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 18:10:02 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/03 13:30:21 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 
 Cat::Cat(): Animal()
 {
-    std::cout << "default Cat constructor called...\n";
+    std::cout << "Cat default constructor called...\n";
     _type = "Cat";
     this->brain = new Brain();
 };
         
-
 
 Cat::~Cat()
 {
