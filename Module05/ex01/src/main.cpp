@@ -5,93 +5,92 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 19:20:51 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 20:46:53 by cova             ###   ########.fr       */
+/*   Created: 2025/09/05 12:40:30 by cova              #+#    #+#             */
+/*   Updated: 2025/09/10 10:01:52 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Bureaucrat.hpp"
-#include <iostream>
+#include "Form.hpp"
 
 int main()
 {
-    std::cout << "\n\033[32;1m=== Test 1: Valid constructor === " << "\033[0m\n"  << std::endl;
+    std::cout << "\033[32;1m" << "\n=== Test 1: Valid Bureaucrat creation ===" << "\033[0m" << std::endl;
     try
     {
-        Bureaucrat bob("Bob", 75);
-        std::cout << bob << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "\n\033[35;1m" << e.what() << "\033[0m"  << std::endl;
-    }
-
-    std::cout << "\n\033[32;1m=== Test 2: Grade too high ===" << "\033[0m" << std::endl;
-    try
-    {
-        Bureaucrat alice("Alice", 0);
+        Bureaucrat alice("Alice", 30);
+        Form f1("formulario_1", 30, 30);
         std::cout << alice << std::endl;
+        std::cout << f1<< std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "\033[31;1mException caught-> " << e.what() << "\033[0m" << std::endl;
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
     }
 
-    std::cout << "\n\033[32;1m=== Test 3: Grade too low ===" <<  "\033[0m" << std::endl;
+    std::cout << "\033[32;1m" << "\n=== Test 2: Valid Form creation ===" << "\033[0m" << std::endl;
     try
     {
-        Bureaucrat charlie("Charlie", 151);
-        std::cout << charlie << std::endl;
+        Form form1("Tax Document", 50, 25);
+        std::cout << "\033[32;1m" << form1 << "\033[0m" << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << "\033[33;1m Exception caught: " << "\033[0m" << e.what() << std::endl;
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
     }
 
-    std::cout << "\n\033[32;1m=== Test 4: Increment/Decrement ===" << "\033[0m"  << std::endl;
+    std::cout << "\033[32;1m" << "\n=== Test 3: Form with grade too high ===" << std::endl;
     try
     {
-        Bureaucrat dave("Dave", 5);
-        std::cout << "Initial: " << dave << std::endl;
+        Form form2("Invalid Form", 0, 25);
+        std::cout << form2 << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
+    }
+
+    std::cout << "\033[32;1m" << "\n=== Test 4: Form with grade too low ===" << "\033[0m" << std::endl;
+    try
+    {
+        Form form3("Invalid Form", 50, 151);
+        std::cout << form3 << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
+    }
+
+    std::cout << "\033[32;1m" << "\n=== Test 5: Successful form signing ===" << "\033[0m" << std::endl;
+    try
+    {
+        Bureaucrat bob("Bob", 20);
+        Form form4("License", 50, 25);
         
-        dave.incrementGrade();
-        std::cout << "\033[34;1m⬆️ After increment: " << "\033[0m"  << dave << std::endl;
+        std::cout << "\033[34;1m" <<  "Before signing: \n" << form4 << std::endl;
+        bob.signForm(form4);
+        std::cout << "\033[34;1m" <<  "After signing: \n" << form4 << "\033[0m" <<  std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
+    }
+
+    std::cout << "\033[32;1m" << "\n=== Test 6: Failed form signing (grade too low) ===" << "\033[0m" << std::endl;
+    try
+    {
+        Bureaucrat charlie("Charlie", 100);
+        Form form5("Top Secret", 10, 5);
         
-        dave.decrementGrade();
-        std::cout << "\033[34;1m⬇️ After decrement: " << "\033[0m"  << dave << std::endl;
+        std::cout << "\033[34;1m" << "Before signing: " << form5 << "\033[0m" << std::endl;
+        charlie.signForm(form5);
+        std::cout << "\033[34;1m" << "After signing: " << form5 << "\033[0m" << std::endl;
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "\033[31;1m" << "Exception catched:" << e.what() << "\033[0m" << std::endl;
     }
 
-    std::cout << "\n\033[32;1m=== Test 5: Increment out of range ===" << "\033[0m" << std::endl;
-    try
-    {
-        Bureaucrat eve("Eve", 1);
-        std::cout << "\033[34;1m" << "Initial: " << eve << std::endl;
-        eve.incrementGrade();
-        std::cout << "\033[34;1m" << "This should not print" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "\033[31;1mException caught: " << e.what() << "\033[0m"  << std::endl;
-    }
-
-    std::cout << "\n\033[32;1m=== Test 6: Decrement out of range ===" << "\033[0m" << std::endl;
-    try
-    {
-        Bureaucrat frank("Frank", 150);
-        std::cout << "\033[34;1m" << " Initial: " << frank  << "\033[0m" <<std::endl;
-        frank.decrementGrade();
-        std::cout << "This should not print" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << " \033[34;1m" <<  "Exception caught: " << e.what() << "\033[0m" << std::endl;
-    }
-
-    std::cout << "\033[35;1m" << "=== All tests completed! ===" << std::endl;
+    std::cout << "\033[35;1m" << "\n=== All tests completed! ===" << "\033[0m" << std::endl;
     return (0);
 }

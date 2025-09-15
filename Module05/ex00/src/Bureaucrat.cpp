@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:30:38 by cova              #+#    #+#             */
-/*   Updated: 2025/09/01 20:48:12 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/05 11:35:17 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void Bureaucrat::_setGrade(int grade) {
         throw GradeTooHighException();
     if (grade > 150)
         throw GradeTooLowException();
-    this->_grade = grade; // válido porque es miembro
+    this->_grade = grade; // no hay excepcion, valor válido.
 }
     
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
@@ -72,12 +72,18 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-    this->_grade--;
+    std::cout << "\033[34;1m" << "Incremento... " << "\033[0m" << std::endl;
+    if (_grade - 1 < 1)
+        throw GradeTooHighException();
+    _grade--;   
 };
         
 void Bureaucrat::decrementGrade()
 {
-    this->_grade++;
+    std::cout << "\033[34;1m" << "Decremento... " << "\033[0m" << std::endl;
+    if (_grade +1 > 150)
+        throw GradeTooLowException();
+    _grade++;    
 };
 
 std::ostream& operator << (std::ostream &os, const Bureaucrat &bure)
@@ -86,7 +92,7 @@ std::ostream& operator << (std::ostream &os, const Bureaucrat &bure)
     return (os);
 };
 
-
+/**************** Declaración de excepciones personalizadas ***************/
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {

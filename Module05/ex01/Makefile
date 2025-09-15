@@ -17,7 +17,7 @@ MSG_COMPILE = @echo "$(GREEN)🔧 $(NAME) compliled...\n$(RESET)" ""
 NAME = form
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iincludes
-SRC = main.cpp Bureaucrat.cpp Forms.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 
 SRCS	= $(addprefix src/, $(SRC))
 OBJS	= $(addprefix obj/, $(SRC:.cpp=.o))
