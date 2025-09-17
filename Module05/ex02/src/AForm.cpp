@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:09:05 by cova              #+#    #+#             */
-/*   Updated: 2025/09/17 12:57:07 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/17 17:12:54 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,3 +72,17 @@ std::ostream& operator<<(std::ostream& o, const AForm& f)
     return o;
 };
 
+
+
+// Definición de what()
+const char* AForm::GradeTooHighException::what() const throw() {
+    return "Grade too high";
+}
+
+const char* AForm::GradeTooLowException::what() const throw() {
+    return "Grade too low";
+}
+
+const char* AForm::FormNotSignedException::what() const throw() {
+    return "Form not signed";
+}
