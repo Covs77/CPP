@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:09:05 by cova              #+#    #+#             */
-/*   Updated: 2025/09/05 13:17:27 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/17 12:40:20 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ class Form
         public: 
             virtual const char *what() const throw();
     };
+   
 };
-
 std::ostream& operator<<(std::ostream& o, const Form& f);
 
 #endif
