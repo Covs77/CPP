@@ -6,15 +6,29 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:40:30 by cova              #+#    #+#             */
-/*   Updated: 2025/09/15 17:23:51 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/17 12:52:36 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-	std::cout << "\033[32;1m" << "\n=== Test 1: Valid Bureaucrat creation ===" << "\033[0m" << std::endl;
-	return (0);
+    Bureaucrat bob("Bob", 100);
+    ShrubberyCreationForm form("garden");
+
+    try
+    {
+        bob.signAForm(form);
+        bob.executeAForm(form);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
+    return 0;
 }

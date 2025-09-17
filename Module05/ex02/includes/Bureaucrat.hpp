@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:04:57 by cova              #+#    #+#             */
-/*   Updated: 2025/09/15 17:33:37 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/17 12:50:44 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #define BUREAUCREAT_HPP
 #include  <string>
 #include  <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
-class Bureaucrat: private AForm
+class AForm;
+class Bureaucrat
 {
     private: 
 
@@ -35,6 +35,7 @@ class Bureaucrat: private AForm
         std::string const getName() const;
         int getGrade() const;
         void signAForm(AForm &form);
+        void executeAForm(AForm const &form); 
         void incrementGrade();
         void decrementGrade();
 

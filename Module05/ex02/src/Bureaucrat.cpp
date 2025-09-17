@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:30:38 by cova              #+#    #+#             */
-/*   Updated: 2025/09/10 09:59:40 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/17 12:52:10 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ std::ostream& operator << (std::ostream &os, const Bureaucrat &bure)
     return (os);
 };
 
-void Bureaucrat::signForm(Form &form) 
+void Bureaucrat::signAForm(AForm &form) 
 {
     try {
         form.beSigned(*this); // llama al método correcto de Form
@@ -102,6 +102,22 @@ void Bureaucrat::signForm(Form &form)
     }
 }
 
+void Bureaucrat::executeAForm(AForm const &form)
+{
+    
+    try 
+    {
+        form.execute(*this);  // intenta ejecutar el formulario
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    }
+    catch (std::exception &e) 
+    {
+        std::cout << this->_name << " couldn’t execute " 
+                  << form.getName() << " because " 
+                  << e.what() << std::endl;
+    }
+
+}; 
 /**************** Declaración de excepciones personalizadas ***************/
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

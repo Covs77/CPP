@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:09:05 by cova              #+#    #+#             */
-/*   Updated: 2025/09/15 19:31:49 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/17 12:57:07 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include <iostream>
 #include <string>
 
-AForm::AForm(){};
+AForm::AForm():_name("DefaultForm"), _signed(false), _gradeToSign(150), _gradeToExec(150) {};
 AForm::~AForm(){};
         
 AForm::AForm(const AForm &other): _name(other._name), _signed(other._signed), 
 _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec){};
 
 AForm::AForm(const std::string &name, int grade, int exec): _name(name), 
-    _gradeToExec(exec), _gradeToSign(grade), _signed(false){};
+    _signed(false), _gradeToSign(grade), _gradeToExec(exec){};
         
 AForm &AForm::operator=(const AForm &other)
 {
@@ -57,7 +57,7 @@ int AForm::getGradeToExec() const
 void AForm::beSigned(Bureaucrat &b)
 {
     if (b.getGrade() > this->getGradeToSign())
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
     this->_signed = true;
 
 };
