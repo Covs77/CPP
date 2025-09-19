@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:09:05 by cova              #+#    #+#             */
-/*   Updated: 2025/09/17 17:59:38 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:41:32 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
     
 PresidentialPardonForm::PresidentialPardonForm(const std::string &target): AForm ("PresidentialPardonForm",25,5), _target(target){
-    std::cout << "PresidentialPardonForm Param constructor Called...";
+    std::cout << "\033[33;1m" << "PresidentialPardonForm Param constructor Called...\n" << "\033[0m";
 };
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-    std::cout << "PresidentialPardonForm Destructor Called...";
+    std::cout << "\033[31;1m" << "PresidentialPardonForm Destructor Called...\n" << "\033[0m";
 };
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
@@ -44,7 +44,7 @@ void PresidentialPardonForm::execute (Bureaucrat const &executor) const
     if (executor.getGrade() > this->getGradeToExec())
         throw GradeTooLowException();
 
-    std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox\n";
+    std::cout << "\033[33;1m" << this->getTarget() << " has been pardoned by Zaphod Beeblebrox\n" << "\033[0m";
 };
 
 /*std::ostream &operator<<(std::ostream &out, PresidentialPardonForm *src)

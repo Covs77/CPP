@@ -15,10 +15,10 @@
 #include <cstdlib>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm", 145,137), _target(target){
-    std::cout << "Shrubbery Creation Form Called...\n";
+    std::cout << "\033[32;1m" << "Shrubbery Creation Form Called...\n" << "\033[0m";
 };
 ShrubberyCreationForm::~ShrubberyCreationForm(){
-    std::cout << "Shrubbery Destructor Form Called...\n";
+    std::cout<< "\033[31;1m" << "Shrubbery Destructor Form Called...\n" << "\033[0m";
 };
 
 

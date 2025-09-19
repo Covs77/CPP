@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:09:05 by cova              #+#    #+#             */
-/*   Updated: 2025/09/17 17:12:54 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:48:06 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 #include <string>
 
 AForm::AForm():_name("DefaultForm"), _signed(false), _gradeToSign(150), _gradeToExec(150) {};
-AForm::~AForm(){};
+AForm::~AForm(){
+     std::cout << "\033[31;1m" << "Default Gerenic Form Destructor...\n" << "\033[0m";
+};
         
 AForm::AForm(const AForm &other): _name(other._name), _signed(other._signed), 
 _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec){};

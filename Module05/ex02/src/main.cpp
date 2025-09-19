@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:40:30 by cova              #+#    #+#             */
-/*   Updated: 2025/09/17 17:55:37 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:42:30 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-    std::cout << "🧑‍💼 === Test 1: Valid Bureaucrat creation === ✅" << std::endl;
+    std::cout << "\033[32;1m" << "=== Test 1: Valid Bureaucrat creation === " << "\033[0m"<< std::endl;
     try
     {
         Bureaucrat alice("Alice", 30);
@@ -29,7 +30,7 @@ int main()
         std::cout << "❌ " << e.what() << std::endl;
     }
 
-    std::cout << "\n🌳 === Test 2: ShrubberyCreationForm creation === ✅" << std::endl;
+    std::cout << "\033[32;1m" << "\n=== Test 2: ShrubberyCreationForm creation ===" << "\033[0m"<< std::endl;
     try
     {
         ShrubberyCreationForm form1("home");
@@ -39,8 +40,8 @@ int main()
     {
         std::cout << "❌ " << e.what() << std::endl;
     }
-    /*
-    std::cout << "\n🤖 === Test 3: RobotomyRequestForm creation === ✅" << std::endl;
+    
+    std::cout << "\033[32;1m" << "\n=== Test 3: RobotomyRequestForm creation ===" << "\033[0m" << std::endl;
     try
     {
         RobotomyRequestForm form2("Bender");
@@ -50,8 +51,8 @@ int main()
     {
         std::cout << "❌ " << e.what() << std::endl;
     }
-*/
-    std::cout << "\n🎖️ === Test 4: PresidentialPardonForm creation === ✅" << std::endl;
+
+    std::cout << "\033[35;1m" << "\n=== Test 4: PresidentialPardonForm creation ===" << "\033[0m" << std::endl;
     try
     {
         PresidentialPardonForm form3("Arthur Dent");
@@ -62,7 +63,7 @@ int main()
         std::cout << "❌ " << e.what() << std::endl;
     }
     
-    std::cout << "\n✍️ === Test 5: Successful form signing === ✅" << std::endl;
+    std::cout << "\033[35;1m" << "\n=== Test 5: Successful form signing ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat bob("Bob", 20);
@@ -77,7 +78,7 @@ int main()
         std::cout << "❌ " << e.what() << std::endl;
     } 
     
-	std::cout << "\n🔒 === Test 6: Failed form signing (grade too low) === ❌" << std::endl;
+	std::cout << "\033[35;1m" << "\n=== Test 6: Failed form signing (grade too low) === ❌" << "\033[0m" << std::endl;
 	try
 	{
 		Bureaucrat charlie("Charlie", 100);
@@ -92,7 +93,7 @@ int main()
 		std::cout << "❌ " << e.what() << std::endl;
 	} 
     
-    std::cout << "\n🌳 === Test 7: Successful ShrubberyCreationForm execution === ✅" << std::endl;
+    std::cout << "\033[35;1m" << "\n=== Test 7: Successful ShrubberyCreationForm execution ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat alice("Alice", 130);
@@ -108,8 +109,8 @@ int main()
     {
         std::cout << "❌ " << e.what() << std::endl;
     }
-/*
-    std::cout << "\n🤖 === Test 8: Successful RobotomyRequestForm execution === ✅" << std::endl;
+
+    std::cout << "\033[35;1m" << "\n=== Test 8: Successful RobotomyRequestForm execution ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat dave("Dave", 40);
@@ -125,8 +126,8 @@ int main()
     {
         std::cout << "❌ " << e.what() << std::endl;
     }
-    */
-   std::cout << "\n🎖️ === Test 9: Successful PresidentialPardonForm execution === ✅" << std::endl;
+
+   std::cout << "\033[35;1m" << "\n=== Test 9: Successful PresidentialPardonForm execution ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat eve("Eve", 1);
@@ -143,7 +144,7 @@ int main()
         std::cout << "❌ " << e.what() << std::endl;
     }
     
-    std::cout << "\n🚫 === Test 10: Execute unsigned form === ❌" << std::endl;
+    std::cout << "\033[35;1m" << "\n=== Test 10: Execute unsigned form ===" << "\033[0m" << std::endl;
     try
     {
         Bureaucrat frank("Frank", 1);
@@ -156,33 +157,33 @@ int main()
     {
         std::cout << "❌ " << e.what() << std::endl;
     }
-    /*
-	std::cout << "\n🎲 === Test 11: Multiple robotomy attempts === 🎲" << std::endl;
+    
+	std::cout << "\033[35;1m" << "\n=== Test 11: Multiple robotomy attempts ===" << "\033[0m" << std::endl;
 	try
 	{
 		Bureaucrat ivan("Ivan", 1);
 		
 		std::cout << "\n--- Attempt 1 ---" << std::endl;
 		RobotomyRequestForm form1("Robot1");
-		ivan.signForm(form1);
-		ivan.executeForm(form1); */
+		ivan.signAForm(form1);
+		ivan.executeAForm(form1);
 		
-		/* std::cout << "\n--- Attempt 2 ---" << std::endl;
+		std::cout << "\n--- Attempt 2 ---" << std::endl;
 		RobotomyRequestForm form2("Robot2");
-		ivan.signForm(form2);
-		ivan.executeForm(form2); */
+		ivan.signAForm(form2);
+		ivan.executeAForm(form2);
 		
-		/*std::cout << "\n--- Attempt 3 ---" << std::endl;
+		std::cout << "\n--- Attempt 3 ---" << std::endl;
 		RobotomyRequestForm form3("Robot3");
-		ivan.signForm(form3);
-		ivan.executeForm(form3);
+		ivan.signAForm(form3);
+		ivan.executeAForm(form3);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << "❌ " << e.what() << std::endl;
 	}
 
-    */
-    std::cout << "\n🎉 === All tests completed! ===" << std::endl;
+    
+    std::cout << "\033[34;1m" << "\n=== All tests completed! ===" << "\033[0m" <<std::endl;
     return (0);
 }

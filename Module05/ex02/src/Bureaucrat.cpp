@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 19:30:38 by cova              #+#    #+#             */
-/*   Updated: 2025/09/17 12:52:10 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:43:27 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void Bureaucrat::executeAForm(AForm const &form)
     try 
     {
         form.execute(*this);  // intenta ejecutar el formulario
-        std::cout << this->_name << " executed " << form.getName() << std::endl;
+        std::cout << "\033[32;1m" << this->_name << " executed " << form.getName() << "\033[0m" << std::endl;
     }
     catch (std::exception &e) 
     {
