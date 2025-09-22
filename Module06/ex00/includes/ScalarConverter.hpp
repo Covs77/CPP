@@ -6,14 +6,27 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 12:27:55 by cova              #+#    #+#             */
-/*   Updated: 2025/09/21 12:34:23 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/22 12:06:37 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 #define SCALARCONVERTER_HPP
 #include <string>
+# include <iostream>
+# include <cstring>
+# include <climits>
+# include <cstdlib>
 
+enum types
+{
+	INT,
+	CHAR,
+	FLOAT,
+	DOUBLE,
+	SPCF,
+	SPC,
+};
 class ScalarConverter
 {
     private: 
