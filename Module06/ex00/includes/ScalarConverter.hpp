@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 12:27:55 by cova              #+#    #+#             */
-/*   Updated: 2025/09/22 12:06:37 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/22 13:10:38 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <cstring>
 # include <climits>
 # include <cstdlib>
+# include <cstdio>
 
 enum types
 {

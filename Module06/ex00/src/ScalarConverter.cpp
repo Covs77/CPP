@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 12:32:36 by cova              #+#    #+#             */
-/*   Updated: 2025/09/22 12:44:09 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/22 13:24:17 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,18 @@ void typePseudo(const std::string input)
     else 
         std::cout << "float: " << input << "f" <<std::endl; 
     std::cout << "double: " << input << std::endl; 
+    
+};
+
+void typePseudoF(const std::string input)
+{
+    std::cout << "Char: impossible\n";
+    std::cout << "int: impossible\n";
+    if (input == "nanf" || input == "+inff" || input =="-inff")
+        std::cout << "float: " << input <<std::endl;
+    else 
+        std::cout << "float: " << input << "f" <<std::endl; 
+    std::cout << "double: " << input.substr(0, input.length() - 1) << "\n";
 };
 
 void typeChar(const char c)
@@ -81,7 +93,7 @@ void typeInt(std::string input)
 {
     int i = atoi(input.c_str());
     std::cout << "Char: ";
-    if (isprint(static_cast<char>(i)))
+    if (isprint(static_cast<char>(i)) < 255 && isprint(static_cast<char>(i)) > 0)
         std::cout << "'"<< static_cast<char>(i) << "'\n"; 
     else
         std::cout << "Non displayable" << std::endl;
@@ -101,6 +113,8 @@ int getType(const std::string s)
         return SPC;
     if (s== "nanf" || s == "-inff" || s == "+inff")
         return SPCF;
+    if (s == "-nan" || s == "+nan")
+        return -1;
     if (s == "inf")
         return INT;
     if (s.length() == 1 && (std::isalpha(s[0])) && (std::isprint(s[0])))
@@ -131,20 +145,23 @@ void typeFloat(std::string s)
 {
     float f;
     f = atof (s.c_str());
-    std::cout << "Char: ";
+    std::cout << "char: ";
     if (isround(f) && isprint(static_cast<char>(f)))
         std::cout << "'" << static_cast<char>(f) << "\n";
     else 
       std::cout << "Non displayable" << std::endl;
     if (!overFlow(s))
-    {
         std::cout << "int: " << static_cast<int>(f) << "\n";
-        std::cout << "float: " << f;
-        if (isround(f))
-            std::cout << ".0f\n";
-        else
-            std::cout << "\n";
-    }
+    std::cout << "float: " << f;
+    if (isround(f))
+        std::cout << ".0f\n";
+    else
+        std::cout << "f\n";
+    std::cout << "double: " << static_cast<float>(f);
+    if (isround(f))
+        std::cout << ".0\n";
+    else 
+        std::cout << "\n";
 };
 
 
@@ -158,14 +175,13 @@ void typeDouble(std::string s)
     else 
         std::cout << "Non displayable" << std::endl;
     if (!overFlow(s))
-    {
         std::cout << "int: " << static_cast<int>(d) << "\n";
-        std::cout << "float: " << d;
-        if (isround(d))
-            std::cout << ".0f\n";
-        else
-            std::cout << "\n";
-    }    
+    std::cout << "float: " << d;
+    if (isround(d))
+        std::cout << ".0f\n";
+    else
+        std::cout << "f\n";
+    
     std::cout << "double: " << d;
     if (isround(d))
         std::cout << ".0\n";
@@ -183,6 +199,7 @@ void ScalarConverter::convert(std::string const &input)
             break;
             
         case INT:
+            
             typeInt(input);
             break;
             
@@ -195,7 +212,7 @@ void ScalarConverter::convert(std::string const &input)
             break;
             
         case SPCF:
-            typePseudo(input);
+            typePseudoF(input);
             break;
             
         case SPC:
@@ -203,7 +220,7 @@ void ScalarConverter::convert(std::string const &input)
             break;
             
         default:
-            std::cout << "\033[31,1m Error, no conversion is possible\n\033[0m";
+            std::cout << "\033[31;1mError, invalid literal format\n\033[0m";
     }
      
 };
