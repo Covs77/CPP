@@ -14,10 +14,10 @@ RESET	:= \033[0m
 MSG_COMPILE = @echo "$(GREEN)🔧 $(NAME) compliled...\n$(RESET)" ""
 
 
-NAME = convert
+NAME = base
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iincludes
-SRC = main.cpp ScalarConverter.cpp
+SRC = main.cpp Base.cpp A.cpp B.cpp C.cpp
 
 SRCS	= $(addprefix src/, $(SRC))
 OBJS	= $(addprefix obj/, $(SRC:.cpp=.o))
