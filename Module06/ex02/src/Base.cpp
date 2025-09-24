@@ -6,7 +6,7 @@
 /*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:25:09 by anttorre          #+#    #+#             */
-/*   Updated: 2025/09/23 18:48:21 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/24 13:41:23 by cleguina         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,13 @@
 #include <cstdlib>
 #include <ctime>
 
-Base::Base(){};
-
 Base::~Base(){};
-std::string Base::getType() const
-{
-    return "Base";
-};
 
 Base *generate(void)
 {
     Base *b = NULL;
-    srand(time(0));
-    int i = rand() % 3;    
+   
+    int i = rand() % 3;
     switch (i)
     {
     case 0:
@@ -46,13 +40,13 @@ Base *generate(void)
 void identify(Base* p)
 {
     if (dynamic_cast<A*>(p))
-        std::cout << "Type class A\n";
+        std::cout << "Pointer Type A\n";
     else if (dynamic_cast<B*>(p))
-        std::cout << "Type class B\n";
+        std::cout << "Pointer Type B\n";
     else if (dynamic_cast<C*>(p))
-        std::cout << "Typer class C\n";
+        std::cout << "Pointer Type C\n";
     else 
-        std::cout << "Typer class Unknown\n";
+        std::cout << "\033[31;1mUnknown class type....\n\033[0m";
 };
 
 void identify(Base& p)
@@ -60,25 +54,25 @@ void identify(Base& p)
     try
     {
         (void)(dynamic_cast<A&>(p));
-        std::cout << "Type class A\n";
+        std::cout << "Ref Type class A\n";
     }
     catch (std::exception&)
     {
         try
         {
             (void)(dynamic_cast<B&>(p));
-            std::cout << "Type class B\n";
+            std::cout << "Ref Type class B\n";
         }
         catch (std::exception&)
         {
             try
             {
                 (void)(dynamic_cast<C&>(p));        
-                std::cout << "Typer class C\n";
+                std::cout << "Ref Type class C\n";
             }
             catch (std::exception&)
             {
-                std::cout << "Unknown type\n";
+                std::cout << "\033[31;1mException: Unknown ref type\n\033[0m";
             }
         }
     }
