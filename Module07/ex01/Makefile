@@ -14,7 +14,7 @@ RESET	:= \033[0m
 MSG_COMPILE = @echo "$(GREEN)🔧 $(NAME) compliled...\n$(RESET)" ""
 
 
-NAME = functions
+NAME = iter
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -Iincludes
 SRC = main.cpp 
