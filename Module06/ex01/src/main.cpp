@@ -27,8 +27,7 @@ int main()
 	std::cout << "\033[033;1m\nTest Result:\033[0m" << std::endl;
 	if (deserializedPtr == &original)
 	{
-		std::cout << "Data: " << deserializedPtr->getName() 
-				  << std::endl;
+		std::cout << "Deserialized Data: " << deserializedPtr->getName() << std::endl;
 		std::cout << "\033[035;1mSUCCESS: Addresses match!\033[0m" << std::endl;
 	}
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleguina <cleguina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:25:09 by anttorre          #+#    #+#             */
-/*   Updated: 2025/09/24 13:41:23 by cleguina         ###   ########.fr       */
+/*   Updated: 2025/09/29 11:01:52 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 #include "C.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <string>
 
 Base::~Base(){};
 
 Base *generate(void)
 {
     Base *b = NULL;
-   
+    std::cout << "\033[033;1m" << "Random Type generator\033[0m\n";
     int i = rand() % 3;
     switch (i)
     {

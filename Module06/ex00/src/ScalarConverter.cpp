@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/21 12:32:36 by cova              #+#    #+#             */
-/*   Updated: 2025/09/22 13:24:17 by cova             ###   ########.fr       */
+/*   Updated: 2025/09/29 10:43:13 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool overFlow(std::string s)
         
 void typePseudo(const std::string input)
 {
-    std::cout << "Char: impossible\n";
+    std::cout << "char: impossible\n";
     std::cout << "int: impossible\n";
     if (input == "nanf" || input == "+inff" || input =="-inff")
         std::cout << "float: " << input <<std::endl;
@@ -64,7 +64,7 @@ void typePseudo(const std::string input)
 
 void typePseudoF(const std::string input)
 {
-    std::cout << "Char: impossible\n";
+    std::cout << "char: impossible\n";
     std::cout << "int: impossible\n";
     if (input == "nanf" || input == "+inff" || input =="-inff")
         std::cout << "float: " << input <<std::endl;
@@ -78,10 +78,10 @@ void typeChar(const char c)
     int num = static_cast <int> (c);
     float f = static_cast <float>(c);
     double d = static_cast <double> (c);
-    std::cout << "Char: '" << c << "'"<< std::endl;
-    std::cout << "Int: " << num << std::endl;
-    std::cout << "Float: " << f << ".0f" << std::endl;
-    std::cout << "Double: " << d << ".0" << std::endl;
+    std::cout << "char: '" << c << "'"<< std::endl;
+    std::cout << "int: " << num << std::endl;
+    std::cout << "float: " << f << ".0f" << std::endl;
+    std::cout << "double: " << d << ".0" << std::endl;
 }
 
 bool esNumerico2(const std::string &s) {
@@ -92,16 +92,16 @@ bool esNumerico2(const std::string &s) {
 void typeInt(std::string input)
 {
     int i = atoi(input.c_str());
-    std::cout << "Char: ";
-    if (isprint(static_cast<char>(i)) < 255 && isprint(static_cast<char>(i)) > 0)
+    std::cout << "char: ";
+    if (i>= 32 && i<= 126)
         std::cout << "'"<< static_cast<char>(i) << "'\n"; 
     else
         std::cout << "Non displayable" << std::endl;
     if (!overFlow(input))
     {
-        std::cout << "Int: " << i << std::endl;
-        std::cout << "Float: " << static_cast<float>(i) << ".0f\n";
-        std::cout << "Double: " << static_cast<double>(i) << ".0\n";
+        std::cout << "int: " << i << std::endl;
+        std::cout << "float: " << static_cast<float>(i) << ".0f\n";
+        std::cout << "double: " << static_cast<double>(i) << ".0\n";
     }
 }
 
@@ -117,7 +117,7 @@ int getType(const std::string s)
         return -1;
     if (s == "inf")
         return INT;
-    if (s.length() == 1 && (std::isalpha(s[0])) && (std::isprint(s[0])))
+    if (s.length() == 1 && (std::isprint(s[0])))
         return CHAR;
     strtol(s.c_str(), &endstr, 10);
     if (endstr[0] =='\0')
@@ -147,7 +147,7 @@ void typeFloat(std::string s)
     f = atof (s.c_str());
     std::cout << "char: ";
     if (isround(f) && isprint(static_cast<char>(f)))
-        std::cout << "'" << static_cast<char>(f) << "\n";
+        std::cout << "'" << static_cast<char>(f) << "'\n";
     else 
       std::cout << "Non displayable" << std::endl;
     if (!overFlow(s))
@@ -169,7 +169,7 @@ void typeDouble(std::string s)
 {
     double d;
     d = atof(s.c_str());
-    std::cout << "char :";
+    std::cout << "char: ";
     if (isround(d) && isprint(static_cast<char>(d)))
         std::cout << "'" << static_cast<char>(d) << "'\n";
     else 
