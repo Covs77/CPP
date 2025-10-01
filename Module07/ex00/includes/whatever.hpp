@@ -6,7 +6,7 @@
 /*   By: cova <cova@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:04:58 by cova              #+#    #+#             */
-/*   Updated: 2025/09/29 12:31:30 by cova             ###   ########.fr       */
+/*   Updated: 2025/10/01 13:09:09 by cova             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void swap(T &v1, T &v2)
 template <typename T>
 const T &min(T &v1, T &v2)
 {
-   if (v1 < v2) 
+    if (v1 < v2) 
         return v1;
     else 
         return v2;
